@@ -3,7 +3,7 @@ dzRaty
 
 dzRaty is an [extension for Yii framework](http://www.yiiframework.com/extension/dzraty/). It is a wrapper for [jQuery Raty](http://wbotelhos.com/raty), a plugin developed by [Washington Botelho](http://wbotelhos.com/) that generates a customizable star rating.
 
-To get started, check [http://yii.dezero.es/rating](http://yii.dezero.es/rating)
+To get started, check [http://yii.dezero.es/dzraty](http://yii.dezero.es/dzraty)
 
 ## Installation
 Requirements: jQuery and Yii framework 1.0 or above (tested on 1.1.12).
