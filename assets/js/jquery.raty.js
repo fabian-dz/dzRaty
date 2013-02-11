@@ -6,7 +6,7 @@
  *
  * Licensed under The MIT License
  *
- * @version        2.5.0
+ * @version        2.5.1
  * @since          2010.06.11
  * @author         Washington Botelho
  * @documentation  wbotelhos.com/raty
@@ -39,7 +39,9 @@
 
         this.opt.number = methods._between(this.opt.number, 0, this.opt.numberMax)
 
-        if (this.opt.path && this.opt.path.slice(0, this.opt.path.length - 1) !== '/') {
+        this.opt.path = this.opt.path || '';
+
+        if (this.opt.path && this.opt.path.slice(this.opt.path.length - 1, this.opt.path.length) !== '/') {
           this.opt.path += '/';
         }
 
@@ -170,10 +172,12 @@
           var position = parseFloat((evt.pageX - $(this).offset().left) / self.opt.size),
               plus     = (position > .5) ? 1 : .5;
 
-          methods._fill.call(self, score - 1 + plus);
+          score = score - 1 + plus;
+
+          methods._fill.call(self, score);
 
           if (self.opt.precision) {
-            score = score - 1 + position;
+            score = score - plus + position;
           }
 
           methods._roundStars.call(self, score);
