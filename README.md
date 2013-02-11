@@ -1,7 +1,7 @@
 dzRaty
 ======
 
-DzRaty is an extension for Yii framework. It is a wrapper for [jQuery Raty](http://wbotelhos.com/raty), a plugin developed by [Washington Botelho](http://wbotelhos.com/) that generates a customizable star rating.
+dzRaty is an [extension for Yii framework](http://www.yiiframework.com/extension/dzraty/). It is a wrapper for [jQuery Raty](http://wbotelhos.com/raty), a plugin developed by [Washington Botelho](http://wbotelhos.com/) that generates a customizable star rating.
 
 To get started, check [http://yii.dezero.es/rating](http://yii.dezero.es/rating)
 
@@ -41,13 +41,14 @@ $this->widget('ext.DzRaty.DzRaty', array(
 </pre>
 
 ## Localization - i18n
-DzRaty translates all translatable elements of jQuery Star plugin. You can place your own translation file under DzRaty/messages.
+dzRaty translates all translatable elements of jQuery Star plugin. You can place your own translation file under DzRaty/messages.
 
 Current version contains translation files for spanish. You could simply duplicate and edit one of them.
 
 ## Resources
-- [DzRaty Homepage](http://yii.dezero.es/dzraty)
-- [DzRaty Github Page](https://github.com/fabian-dz/dzRaty)
+- [dzRaty Homepage](http://yii.dezero.es/dzraty)
+- [dzRaty Yii Extension Page](http://www.yiiframework.com/extension/dzraty/)
+- [dzRaty Github Page](https://github.com/fabian-dz/dzRaty)
 - [jQuery Raty Homepage](http://wbotelhos.com/raty)
 - [jQuery Raty Github Page](https://github.com/wbotelhos/raty)
 
