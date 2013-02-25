@@ -125,6 +125,19 @@ class DzRaty extends CInputWidget
 	 */
 	public function run()
 	{
+		if ( $this->hasModel() )
+		{
+			// echo CHtml::activeDropDownList($this->model, $this->attribute, $this->data, $this->targetHtmlOptions);
+			$output_textfield = CHtml::activeTextField($this->model, $this->attribute, $this->targetHtmlOptions);
+			$this->options['score'] = CHtml::resolveValue($this->model, $this->attribute);
+		}
+		else
+		{
+			// echo CHtml::dropDownList($this->name, $this->value, $this->data, $this->targetHtmlOptions);
+			$output_textfield = CHtml::textField($this->name, $this->value, $this->targetHtmlOptions);
+			$this->options['score'] = $this->value;
+		}
+		
 		if ( !isset($this->htmlOptions['class']) )
 		{
 			$this->htmlOptions['class'] = 'raty-icons';
@@ -134,21 +147,15 @@ class DzRaty extends CInputWidget
 			$this->htmlOptions['class'] .= ' raty-icons';
 		}
 		$this->htmlOptions['data-target'] = $this->targetHtmlOptions['id'];
+		$this->htmlOptions['data-score'] = '';
+		if ( !empty($this->options['score']) )
+		{
+			$this->htmlOptions['data-score'] = $this->options['score'];
+		}
 		
-		echo CHtml::openTag('div', $this->htmlOptions) . '</div>';
+		
 
-		if ( $this->hasModel() )
-		{
-			// echo CHtml::activeDropDownList($this->model, $this->attribute, $this->data, $this->targetHtmlOptions);
-			echo CHtml::activeTextField($this->model, $this->attribute, $this->targetHtmlOptions);
-			$this->options['score'] = CHtml::resolveValue($this->model, $this->attribute);
-		}
-		else
-		{
-			// echo CHtml::dropDownList($this->name, $this->value, $this->data, $this->targetHtmlOptions);
-			echo CHtml::textField($this->name, $this->value, $this->targetHtmlOptions);
-			$this->options['score'] = $this->value;
-		}
+		echo CHtml::openTag('div', $this->htmlOptions) . '</div>' . $output_textfield;
 
 		$this->registerClientScript();
 	}
